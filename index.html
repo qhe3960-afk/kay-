@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, view-fit=cover">
+  <title>刘凯 · 采销作品集 | 专业·商业判断</title>
+  <style>
+    /* ========== 蓝白配色 · 干净专业 ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-page: #f5f9ff;
+      --card-bg: #ffffff;
+      --primary: #2c7da0;
+      --primary-light: #61a5c2;
+      --primary-soft: #e2f0f7;
+      --text-dark: #1f2a3e;
+      --text-medium: #33415c;
+      --text-light: #6c7a91;
+      --border-light: #dee7f0;
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      background: var(--bg-page);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 导航栏 */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border-light);
+      padding: 14px 0;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 36px;
+    }
+
+    .nav-flex a {
+      color: var(--text-medium);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: 0.2s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-flex a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Hero区域 */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 48px;
+      background: linear-gradient(145deg, #ffffff 0%, #f0f6fe 100%);
+      border-radius: 0 0 48px 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      border-radius: 60px;
+      padding: 6px 18px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #1f4e6c, #2c7da0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      margin-top: 12px;
+    }
+
+    /* 卡片 */
+    .card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 28px;
+      margin-bottom: 28px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 28px -8px rgba(44, 125, 160, 0.12);
+      border-color: var(--primary-light);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 48px 0 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-dark);
+    }
+
+    .section-title span {
+      background: linear-gradient(120deg, var(--primary), #5fa7c2);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-light), transparent);
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 18px 0 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--primary-soft);
+      border-radius: 40px;
+      padding: 4px 14px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin: 4px 6px 4px 0;
+    }
+
+    /* 可点击按钮样式统一 */
+    .clickable-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-light);
+      border-radius: 48px;
+      padding: 8px 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin: 6px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .clickable-btn:hover {
+      background: var(--primary-light);
+      color: white;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* 详情展开区域 */
+    .detail-panel {
+      background: #f8fbfe;
+      border-radius: 20px;
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.2s ease;
+      margin-top: 12px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .detail-panel.show {
+      max-height: 300px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    /* 固定展开的兴趣爱好区域 */
+    .hobby-fixed {
+      background: #f8fbfe;
+      border-radius: 20px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      border-left: 3px solid var(--primary);
+    }
+
+    .detail-panel p, .hobby-fixed p {
+      color: var(--text-medium);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .flex-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    /* 统计卡片样式 */
+    .stats-mini {
+      background: #f1f8fe;
+      border-radius: 24px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .stat-item {
+      text-align: center;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 20px;
+      transition: 0.2s;
+      background: white;
+      min-width: 100px;
+      border: 1px solid var(--border-light);
+    }
+
+    .stat-item:hover {
+      background: var(--primary-soft);
+      transform: translateY(-2px);
+    }
+
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* 图片 */
+    .avatar {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--primary-light);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .side-img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 1px solid var(--border-light);
+    }
+
+    .logo-img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      border-radius: 16px;
+    }
+
+    .btn-soft {
+      display: inline-block;
+      background: transparent;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      transition: 0.2s;
+      margin-top: 18px;
+      text-decoration: none;
+    }
+
+    .btn-soft:hover {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 6px 12px rgba(44, 125, 160, 0.2);
+    }
+
+    .edu-detail {
+      margin-top: 8px;
+      color: var(--text-medium);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 760px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .clickable-btn {
+        padding: 6px 16px;
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-flex">
+    <a href="#about">关于我</a>
+    <a href="#edu">学历</a>
+    <a href="#intern">实习</a>
+    <a href="#project">项目</a>
+    <a href="#campus">校园经历</a>
+    <a href="#why">结语</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">📊 采销候选人 · 数据驱动 · 全链路思维</div>
+    <h1>刘凯 · Kay</h1>
+    <div class="hero-sub">用数据判断，用执行拿结果 | 选品 · 定价 · 运营 · 复盘</div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- 关于我 保留原始照片-->
+  <section id="about">
+    <div class="section-title"><span>📌 关于我</span></div>
+    <div class="card" style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center;">
+      <div style="flex: 2;">
+        <h3>刘凯（Kay）</h3>
+        <p style="color: var(--primary); font-weight: 500;">📞 15719620622（微信同号）｜📮 liuk2027@163.com</p>
+        <div style="margin: 16px 0;">
+          <span class="tag">📊 数据与商业判断</span>
+          <span class="tag">🤝 协同推进能力</span>
+          <span class="tag">📦 电商采销认知</span>
+        </div>
+        <ul style="margin-left: 20px; color: var(--text-medium);">
+          <li>基于市场环境与用户行为洞察，完成选品及定价策略优化</li>
+          <li>擅长沟通与资源整合，在多方协作中推动项目高效落地</li>
+          <li>熟悉电商“选品→定价→活动→转化→复盘”链路，对采销有体系化理解</li>
+        </ul>
+      </div>
+      <img src="https://i.ibb.co/yn6zgLFJ/Wechat-IMG696.jpg" class="avatar" alt="刘凯照片">
+    </div>
+
+    <div class="card">
+      <div class="flex-between">
+        <h3>🌟 个人特质 · ENFJ 外向推动型</h3>
+      </div>
+      <div class="grid-2" style="margin-top: 8px;">
+        <div>
+          <p><strong>💬 性格优势</strong><br>主动推进、协调资源，较强的沟通与落地能力。</p>
+          <div style="margin-top: 16px;">
+            <div style="font-weight: 600; margin-bottom: 8px;">🚴 兴趣爱好</div>
+            <div class="hobby-fixed">
+              <p>🚴 骑行：长期保持骑行习惯，单次30km+，塑造耐力与执行力。<br>
+              🎵 听歌：通过音乐保持专注与情绪调节能力。<br>
+              📚 读书：保持对新消费趋势的敏锐度，持续更新认知。<br>
+              💡 持续学习：相信认知迭代，每周保持阅读与复盘习惯。</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="stats-mini">
+            <div class="stat-item" data-stat="stat1">
+              <div class="stat-num">15+</div>
+              <div>SKU深度竞品</div>
+            </div>
+            <div class="stat-item" data-stat="stat2">
+              <div class="stat-num">3</div>
+              <div>采销完整项目</div>
+            </div>
+            <div class="stat-item" data-stat="stat3">
+              <div class="stat-num">600+</div>
+              <div>用户调研样本</div>
+            </div>
+          </div>
+          <div id="stat1Detail" class="detail-panel"><p>📊 覆盖usmile/小米/飞利浦/欧乐B等品牌，横向对比价格带、功能配置、用户评价，精准定位200-400元核心价格区间，为选品提供数据支撑。</p></div>
+          <div id="stat2Detail" class="detail-panel"><p>📦 电动牙刷选品定价分析、桌面洞洞板京东采销全链路策略、以及爱奇艺实习中沉淀的供应商管理/项目运营经验，贯穿选品-定价-运营-复盘完整闭环。</p></div>
+          <div id="stat3Detail" class="detail-panel"><p>📝 校园二手街项目收集600+份用户反馈，基于真实需求优化交易流程；电动牙刷项目基于评价归因提炼核心决策因子；擅长将用户洞察转化为选品策略。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学历背景 -->
+  <section id="edu">
+    <div class="section-title"><span>🎓 学历背景</span></div>
+    <div class="card flex-between">
+      <div>
+        <p><strong>北京邮电大学（211）</strong> · 人工智能法 硕士 (2024-2027)</p>
+        <div class="edu-detail">🏆 连续两年一等奖学金</div>
+        <div class="edu-detail">📖 核心课程：电子商务法、网络信息与安全法、在线争议解决、人工智能法</div>
+      </div>
+      <img src="https://i.ibb.co/YF0zK671/bdece620503edc7140f27041b6d1135d.webp" class="logo-img" alt="北邮">
+    </div>
+    <div class="card flex-between">
+      <div>
+        <p><strong>中南民族大学</strong> · 法学 本科 (2020-2024)</p>
+        <div class="edu-detail">🏆 校级社会工作奖学金、辩论赛优秀辩手、学习进步奖学金</div>
+        <div class="edu-detail">📖 核心课程：民法、商法、经济法、国际经济法、国际商法</div>
+      </div>
+      <img src="https://i.ibb.co/G3tfQ96N/a5a5ae766f94fcc0106b5367be9f0038.jpg" class="logo-img" alt="民大">
+    </div>
+  </section>
+
+  <!-- 爱奇艺实习模块 — 完全保留原始版本 -->
+  <section id="intern">
+    <div class="section-title"><span>💼 实习经历 · 爱奇艺</span></div>
+    
+    <div class="card" style="display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
+      <div style="flex: 2;">
+        <h3>爱奇艺 · 影视合同管理实习生</h3>
+        <p style="color: var(--primary);">2025.12 - 2026.03</p>
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          <li>负责3个影视项目合同对接与执行，推进付款结算流程</li>
+          <li>协调法务、财务、制作部门推进拍摄执行</li>
+          <li>支持现场设备与物资调配</li>
+        </ul>
+      </div>
+      <img src="https://i.ibb.co/1GYqFBnV/Wechat-IMG698.jpg" class="side-img" alt="爱奇艺实习">
+    </div>
+
+    <div class="card" style="display: flex; align-items: flex-start; gap: 24px; flex-wrap: wrap;">
+      <div style="flex: 2;">
+        <h3>爱奇艺 · AI创投大会项目运营（内部借调）</h3>
+        <p style="color: var(--primary);">2026.03 - 2026.04</p>
+        <ul style="margin-left: 20px;">
+          <li>处理180+项目报名并筛选60个优质项目</li>
+          <li>协同评委完成评审与落地</li>
+          <li>统筹路演与论坛执行，保障活动0差错</li>
+          <li>完成数据复盘与流程优化</li>
+        </ul>
+      </div>
+      <img src="https://i.ibb.co/h1n9f5fg/Wechat-IMG697.jpg" class="side-img" alt="创投大会">
+    </div>
+  </section>
+
+  <!-- 模拟项目 + 洞洞板（带真实报告链接） -->
+  <section id="project">
+    <div class="section-title"><span>📦 采销模拟实战</span></div>
+
+    <div class="card">
+      <h3>🪥 电商选品与定价分析 · 电动牙刷</h3>
+      <p><strong>目标：</strong>找到高潜力价格带，构建可执行选品与定价策略</p>
+      <div class="grid-2" style="margin-top: 10px;">
+        <div>
+          <h4>📈 市场数据收集</h4>
+          <p>京东15+核心SKU横向对比，识别主流价格带<strong>200–400元</strong>，中高端具备稳定需求。</p>
+          <h4>🧠 用户需求洞察</h4>
+          <p>基于评价归因，核心决策因子：清洁力/便捷性/舒适度 → 用户买的是“体验感提升”。</p>
+        </div>
+        <div>
+          <h4>📦 选品逻辑</h4>
+          <p>基础款 + 升级款组合，覆盖不同支付能力客群。</p>
+          <h4>💰 定价策略设计</h4>
+          <p>基础款200-250元（走量），升级款300-400元（利润），通过功能差异拉开梯度。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left: 4px solid var(--primary);">
+      <h3>🪤 桌面洞洞板 · 京东采销全链路策略（实木/电竞桌搭）</h3>
+      <p><strong>完成时间：</strong>2026.05 &nbsp;|&nbsp; <strong>模拟岗位：</strong>京东采销助理</p>
+      
+      <h4>📊 竞品价格比对（四平台拆解）</h4>
+      <p>规格：40×60cm实木+配件套装。天猫(42-69元)/抖音(49-79元)/拼多多(39元起低质)/京东自营49.9元。<br>
+      <strong>核心机会：</strong>京东定位服务型价格带，以物流+省心套装构建信任壁垒。</p>
+      
+      <h4>🧩 选品报告 & 市场缺口</h4>
+      <div class="grid-2">
+        <div><p><strong>价格带主力：</strong>39-79元销量占比59% → 京东核心战场。<br>首推49-59元实木洞洞板 + 60-79元配件套装。</p></div>
+        <div><p><strong>三大缺口：</strong>京东整板SKU稀缺、配件打包空白、材质信任窗口。<br>策略：不卖单板，卖“省心全家福套装”。</p></div>
+      </div>
+      
+      <h4>💰 采销模拟与毛利测算</h4>
+      <p>毛利空间约35%-45%。谈判思路：让量换价+资源置换，坑位/长尾流量置换专供套装。</p>
+      
+      <!-- 使用您提供的飞书链接，但需要您修改分享权限为“获得链接的人可阅读” -->
+      <a href="https://acn12umqadw9.feishu.cn/wiki/UbnowHBITi1WimkMF8PcuOaJn1e" target="_blank" class="btn-soft" style="display: inline-flex; align-items: center; gap: 6px;">📄 查看完整洞洞板报告</a>
+      <p style="font-size: 0.7rem; margin-top: 8px; color: var(--text-light);">包含四平台比价详表、选品清单、毛利测算与谈判模拟</p>
+    </div>
+  </section>
+
+  <!-- 校园经历 — 挑战杯介绍已精简，无时间 -->
+  <section id="campus">
+    <div class="section-title"><span>🍃 校园经历</span></div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>🎭 北邮研究生会文体部 · 项目负责人</h3>
+        <p>通过收集同学需求、参考相关活动经验，策划并落地“研究生舞会”“书法讲堂”“趣味运动会”等系列活动，实现从方案设计到执行闭环；单场活动参与200+人次，引入4家本地商家赞助及校友专属折扣，覆盖活动成本。</p>
+      </div>
+      <div class="card">
+        <h3>📌 “挑战杯”全国大学生课外学术科技作品竞赛</h3>
+        <p>第二作者 · 《网络直播带货中的消费者权益保护》<br>通过50+案例分析与文献研究，归纳直播带货中知情权、退货权等权益受损问题，提出消费者权益保护优化方案。</p>
+      </div>
+      <div class="card">
+        <h3>📌 “智安杯”国家安全案例大赛 · 负责人</h3>
+        <p>空域治理 + 系统动力学模型，调研50+无人机行业反馈，提出法律政策优化建议，获省级二等奖。</p>
+      </div>
+      <div class="card">
+        <h3>📌 提案大赛 · “校园二手街”升级项目 负责人</h3>
+        <p>收集600+问卷，对比闲鱼/转转，推动平台升级，显著提升用户活跃与交易转化率。</p>
+      </div>
+      <div class="card">
+        <h3>📸 法学院班级宣传委员</h3>
+        <p>输出32篇推文，阅读量提升150%，总曝光2w+，多次被官方转载，熟悉内容运营与增长逻辑。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 核心能力匹配 + 结语 -->
+  <section id="why">
+    <div class="section-title"><span>✨ 为什么京东 · 为什么是我</span></div>
+    <div class="grid-2">
+      <div class="card"><h3>📦 为什么京东</h3><p>高度认同京东“自营+强履约”的供应链模式，采销岗位贯穿选品-运营-结果全链路。我对消费品价格策略与用户决策链路有一定理解，渴望在京东以效率为导向的平台深度打磨商品力。</p></div>
+      <div class="card"><h3>🎯 为什么选择我</h3><p>✔ 数据分析+商业判断：电动牙刷&洞洞板项目已验证价格带分析能力。<br>✔ 跨部门推进+落地：爱奇艺全程0差错项目运营，合同履约率100%。<br>✔ 法商融合+细腻洞察：从用户评价中提炼本质需求，转化为选品策略。</p></div>
+    </div>
+
+    <div class="card">
+      <h3>🎯 核心能力标签 · 采销匹配维度 <span style="font-size:0.85rem; font-weight:normal;">（点击每个维度查看具体说明）</span></h3>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 18px 0 8px;">
+        <div class="clickable-btn" data-cap="cap1">🤝 外部合作/资源引入</div>
+        <div class="clickable-btn" data-cap="cap2">📦 全链路经营能力</div>
+        <div class="clickable-btn" data-cap="cap3">💰 谈判与成本控制</div>
+        <div class="clickable-btn" data-cap="cap4">📊 竞品策略分析</div>
+        <div class="clickable-btn" data-cap="cap5">📈 GMV拆解执行</div>
+        <div class="clickable-btn" data-cap="cap6">🧠 数据工具 (Excel/SQL/Power BI)</div>
+      </div>
+      <div id="cap1" class="detail-panel"><p>▪ 爱奇艺实习中对接30+制作供应商，推进数亿元级合同履约。<br>▪ 北邮文体部引入4家本地商家赞助及校友折扣，通过资源置换覆盖活动成本。<br>▪ 具备供应商沟通和跨部门协同经验，高效整合内外部资源。</p></div>
+      <div id="cap2" class="detail-panel"><p>▪ 模拟“选品→定价→上架→运营→复盘”闭环：电动牙刷价格带分析与选品组合。<br>▪ 洞洞板项目从竞品比价到毛利测算、谈判策略，形成完整采销策略报告。<br>▪ 理解采销是通过商品结构与定价设计构建转化效率。</p></div>
+      <div id="cap3" class="detail-panel"><p>▪ 基于1688报价测算洞洞板毛利空间35%-45%，设计“让量换价+阶梯返点”谈判模型。<br>▪ 爱奇艺工作期间梳理付款结算SOP，优化流程控制隐性成本。<br>▪ 具备成本拆解意识，能结合平台费用提出兼顾利润与竞争力的方案。</p></div>
+      <div id="cap4" class="detail-panel"><p>▪ 对天猫/抖音/拼多多/京东四平台多维比价，制定差异化定价锚点。<br>▪ 电动牙刷项目横向对比15+SKU，识别200-400元核心价格带。<br>▪ 洞洞板报告中找到“京东整板SKU稀缺+配件打包空白”的缺口。</p></div>
+      <div id="cap5" class="detail-panel"><p>▪ 爱奇艺AI创投大会中完成180+项目筛选及现场执行，多线程推进0差错交付。<br>▪ 拆解采销项目目标：冲量款P0（月销2000+）、利润款P1阶梯设计，匹配GMV增长路径。<br>▪ 具备从数据到落地的执行框架，适应高节奏、结果导向的业务环境。</p></div>
+      <div id="cap6" class="detail-panel"><p>▪ 熟练使用Excel完成价格带建模、数据可视化及竞品结构分析。<br>▪ 具备SQL / Power BI 基础，能够从用户评价中做需求归因。<br>▪ 用Excel搭建项目进度看板，实现风险前置识别与关键节点可视化。</p></div>
+      <div style="margin-top: 24px; text-align: center;">
+        <p><strong>一句话总结：</strong>不是只理解采销概念，而是用项目验证过“选品—定价—运营—转化”完整逻辑。<br>👉 如果岗位需要能理解业务并推动结果的人，我高度匹配。</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer style="text-align: center; padding: 40px 20px 32px; border-top: 1px solid #dee7f0; margin-top: 40px; color: #6c7a91;">
+  <p>刘凯 · 京东采销作品集 — 用数据做判断，用执行拿结果</p>
+  <p style="font-size: 0.8rem;">📞 15719620622 &nbsp;|&nbsp; 📧 liuk2027@163.com</p>
+</footer>
+
+<script>
+  // smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // 卡片渐显动画
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(c => {
+    c.style.opacity = '0';
+    c.style.transform = 'translateY(20px)';
+    c.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(c);
+  });
+
+  // 统计数据按钮交互
+  const statItems = document.querySelectorAll('.stat-item');
+  const statDetails = {
+    stat1: document.getElementById('stat1Detail'),
+    stat2: document.getElementById('stat2Detail'),
+    stat3: document.getElementById('stat3Detail')
+  };
+  
+  function closeAllStatDetails() {
+    Object.values(statDetails).forEach(detail => {
+      if (detail) detail.classList.remove('show');
+    });
+  }
+  
+  statItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const statKey = item.getAttribute('data-stat');
+      const targetDetail = statDetails[statKey];
+      if (!targetDetail) return;
+      if (targetDetail.classList.contains('show')) {
+        targetDetail.classList.remove('show');
+      } else {
+        closeAllStatDetails();
+        targetDetail.classList.add('show');
+      }
+    });
+  });
+
+  // 六大能力按钮交互
+  const capBtns = document.querySelectorAll('[data-cap]');
+  const capDetails = {
+    cap1: document.getElementById('cap1'),
+    cap2: document.getElementById('cap2'),
+    cap3: document.getElementById('cap3'),
+    cap4: document.getElementById('cap4'),
+    cap5: document.getElementById('cap5'),
+    cap6: document.getElementById('cap6')
+  };
+
+  function closeAllCapDetails() {
+    Object.values(capDetails).forEach(detail => {
+      if (detail) detail.classList.remove('show');
+    });
+  }
+
+  capBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const capId = btn.getAttribute('data-cap');
+      const targetDetail = capDetails[capId];
+      if (!targetDetail) return;
+      if (targetDetail.classList.contains('show')) {
+        targetDetail.classList.remove('show');
+      } else {
+        closeAllCapDetails();
+        targetDetail.classList.add('show');
+      }
+    });
+  });
+</script>
+</body>
+</html>
